@@ -1,0 +1,179 @@
+/* Geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* Header */
+header {
+    background: black;
+    padding: 15px 0;
+}
+
+header .logo img {
+    height: auto;
+    max-height: 100px; /* Ajuste a altura máxima conforme necessário */
+    width: auto;
+}
+
+header .menu {
+    display: flex;
+    justify-content: center;
+}
+
+header .menu nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+header .social {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .social button {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Formulário */
+.form-section {
+    background: #f0f0f0;
+    padding: 30px 0;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-box {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    flex: 1;
+    margin: 10px;
+    min-width: 280px;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Modo escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .form-section {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .form-box {
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+body.dark-mode .form-group label {
+    color: #cccccc;
+}
+
+body.dark-mode .form-group input {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #444444;
+}
+
+body.dark-mode .form-group input::placeholder {
+    color: #888888;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+body.dark-mode footer {
+    background-color: #1f1f1f;
+}
+
+@media (max-width: 768px) {
+    header .menu, header .social {
+        display: block;
+        text-align: center;
+    }
+
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-box {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo img {
+        width: 120px;
+    }
+
+    header .menu nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}

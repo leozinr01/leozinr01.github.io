@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-container {
+    margin-top: 1rem;
+}
+
+.custom-carousel {
+    margin-bottom: 2rem;
+}
+
+section {
+    padding: 90px 4%;
+    border-bottom: 1px solid #ccc;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+section p {
+    font-size: 20px;
+}
+
+#menu-mobile {
+    background-color: #1111119f;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 77px;
+    right: 0;
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    z-index: 1000;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+#menu-mobile nav a {
+    display: block;
+    color: #ffffff;
+    padding: 20px 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#menu-mobile nav a:hover {
+    background-color: #383838;
+}
+
+#btn-menu,
+#btn-menu-close {
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.fotoposicao {
+    display: flex;
+    flex-direction: row;
+}
+
+.fotoposicao img {
+    margin-right: 60px;
+    height: 270px;
+    width: 500px;
+}
+
+.container1 h2 {
+    margin-left: 0px;
+}
+
+.fotoposicao p {
+    margin-top: 40px;
+}
+
+.container1 h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 25px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+body.dark-mode {
+    background-color: #212529;
+    color: #899095;
+  }
+  .dark-mode a {
+    color: #dee2e6;
+  }
+  .dark-mode a:hover {
+    color: #3cc368;
+  }
+  .switch {
+    --false: #E81B1B;
+    --true: #009068;
+   }
+   
+   /* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    --background: #28096b;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--background);
+    transition: .5s;
+  }
+  
+  input:checked + .slider {
+    background-color: #522ba7;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+  }
+
+ 

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Font Awesome para ícones -->
+    <script src="https://kit.fontawesome.com/6dda5f6271.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para arquivos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/smoothScroll.js"></script>
+    <title>Qual a Boa?</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+    
+</head>
+<body>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <header>
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo" class="img-fluid">
+            </div>
+            <div class="menu">
+                <nav id="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="dropdown">
+                        <a href="#" class="nav-link dropbtn">Categorias</a>
+                        <div class="dropdown-content">
+                            <a href="#shows">Shows</a>
+                            <a href="#cinema">Cinema</a>
+                            <a href="#teatro">Teatro</a>
+                            <a href="#museu">Museu</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="social">
+                <button class="btn btn-outline-primary"><i class="fa-brands fa-instagram"></i></button>
+                <button class="btn btn-outline-primary"><i class="fa-brands fa-facebook-f"></i></button>
+                <button class="btn btn-outline-primary"><i class="fa-brands fa-youtube"></i></button>
+                <label class="switch">
+                    <input type="checkbox" checked id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="login-redirect">
+                <a href="form.html" class="btn btn-primary">Login/Registro</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="carousel-container">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="img/festival.png" alt="Primeiro Slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/logo2.jpg" alt="Segundo Slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/alok.jpeg" alt="Terceiro Slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </div>
+ 
+    <section id="home">
+        <div class="container py-5">
+            <h1 class="text-center">Qual a Boa?</h1>
+            <p class="text-justify">Então, "Qual a boa?" é tipo o seu guia descolado para tudo que está rolando de legal na cidade! Imagine você tá sem planos pro fim de semana, sem ideia do que fazer, é aí que esse site entra em ação. Ele é tipo o seu melhor amigo antenado que sempre sabe onde estão os melhores shows, restaurantes com aquela comida deliciosa, peças de teatro superinteressantes e muito mais.</p>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container py-5">
+            <h2>Bruno Mars</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="img/bruno mars.jpeg" alt="Bruno Mars">
+                </div>
+                <div class="col-md-6">
+                    <p>O cantor Bruno Mars está programado para realizar um show espetacular no Rio de Janeiro, marcando mais uma passagem memorável pela cidade maravilhosa. O evento será realizado no Estádio do Engenhão, conhecido por hospedar grandes eventos e apresentações internacionais. Os fãs podem esperar uma noite de grandes sucessos, incluindo músicas como "Uptown Funk" e "Just the Way You Are".</p>       
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rockinrio">
+        <div class="container py-5">
+            <h2>Rock in Rio</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="img/rockrio.jpg" alt="Rock in Rio">
+                </div>
+                <div class="col-md-6">
+                    <p>O Rock in Rio é um festival de música idealizado pelo empresário brasileiro Roberto Medina pela primeira vez em 1985. É reconhecido como um dos maiores festivais musicais do planeta. Foi originalmente organizado no Rio de Janeiro, de onde vem o nome.</p>       
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="webbullying">
+        <div class="container py-5">
+            <h2>Webbullying - Geração Z</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="img/maumeireles.png" alt="Maurício Meirelles">
+                </div>
+                <div class="col-md-6">
+                    <p>O show conta com 1 hora de textos de Stand-up Comedy com diferentes reflexões no estilo de comédia reflexiva no estilo Maurício Meirelles de ser. Além disso o espetáculo incorporou o quadro com a geração Z para a volta do Webbulliyng: Ou seja, agora Maurício traz a geração z para seu antigo quadro “Webbullying”.</p>       
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shows">
+        <div class="container py-5">
+            <h2>Shows</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="img/trs.jpg" alt="Maurício Meirelles">
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Alma Festival 24</li>
+                        <li>Love Sessions</li>
+                        <li>Vintem Festival</li>
+                        <li>É Rap,É Trap,É Funk-Espaço Hall</li>
+                    </ul>       
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="cinema">
+        <div class="container py-5">
+            <h2>Filmes</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="img/cinema.jpg" alt="Cinema">
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Bad Boys: Até o Fim</li>
+                        <li>Assassino por Acaso</li>
+                        <li>Os Estranhos: Capítulo 1</li>
+                        <li>Garfield - Fora de Casa</li>
+                        <li>Furiosa: Uma Saga Mad Max</li>
+                        <li>Planeta Dos Macacos: O Reinado</li>
+                        <li>Guerra Civil</li>
+                    </ul>       
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="teatro">
+        <div class="container py-5">
+            <h2>Teatros</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="img/opera.jpg" alt="Teatro">
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Theatro Municipal de Niterói</li>
+                        <li>Teatro Princesa Isabel em Copacabana</li>
+                        <li>Teatro Claro Mais Rj</li>
+                        <li>Teatro Riachuelo</li>
+                        <li>Teatro João Caetano</li>
+                        <li>Teatro Poeira</li>
+                        <li>Teatro Fashion Mall</li>
+                    </ul>      
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="museu">
+        <div class="container py-5">
+            <h2>Museus</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="img/museu.jpg" alt="Museu">
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Museu Histórico Nacional</li>
+                        <li>Museu Imperial</li>
+                        <li>Museu do Amanhã</li>
+                        <li>Museu Nacional de Belas Artes</li>
+                        <li>Museu de Astronomia e Ciências Afins</li>
+                        <li>Museu Internacional de Arte Naif</li>
+                        <li>Museu do Flamengo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 Qual a Boa? Todos os direitos reservados.</p>
+            <p>Contato: tel (99) 99999-9999 | @qualaboa</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+      
+        toggleButton.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>  
+</html>

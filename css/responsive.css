@@ -1,0 +1,23 @@
+/* responsive.css */
+@media (max-width: 768px) {
+  .container1 {
+      padding: 15px;
+  }
+
+  .fotoposicao {
+      flex-direction: column;
+  }
+
+  .fotoposicao img {
+      margin-bottom: 15px;
+  }
+
+  nav#nav a {
+      display: block;
+      margin-bottom: 10px;
+  }
+
+  .logo img {
+      max-width: 100px;
+  }
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Font Awesome para ícones -->
+    <script src="https://kit.fontawesome.com/6dda5f6271.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para arquivos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>Formulário de Login e Registro</title>
+    <!-- Script de validação -->
+    <script>
+        function formatCPF(cpfField) {
+            let cpf = cpfField.value.replace(/\D/g, ''); // Remove qualquer caractere que não seja número
+
+            if (cpf.length > 3 && cpf.length <= 6) {
+                cpf = cpf.replace(/(\d{3})(\d+)/, '$1.$2');
+            } else if (cpf.length > 6 && cpf.length <= 9) {
+                cpf = cpf.replace(/(\d{3})(\d{3})(\d+)/, '$1.$2.$3');
+            } else if (cpf.length > 9) {
+                cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, '$1.$2.$3-$4');
+            }
+
+            cpfField.value = cpf;
+        }
+
+        function formatCelular(celField) {
+            let celular = celField.value.replace(/\D/g, ''); // Remove qualquer caractere que não seja número
+
+            if (celular.length > 0 && celular.length <= 2) {
+                celular = celular.replace(/(\d{2})/, '($1) ');
+            } else if (celular.length > 2 && celular.length <= 7) {
+                celular = celular.replace(/(\d{2})(\d+)/, '($1) $2');
+            } else if (celular.length > 7 && celular.length <= 11) {
+                celular = celular.replace(/(\d{2})(\d{5})(\d+)/, '($1) $2-$3');
+            }
+
+            celField.value = celular;
+        }
+
+        function validarCPF(cpf) {
+            cpf = cpf.replace(/[^\d]+/g,'');
+            if(cpf == '') return false;
+            if (cpf.length != 11 ||
+                cpf == "00000000000" ||
+                cpf == "11111111111" ||
+                cpf == "22222222222" ||
+                cpf == "33333333333" ||
+                cpf == "44444444444" ||
+                cpf == "55555555555" ||
+                cpf == "66666666666" ||
+                cpf == "77777777777" ||
+                cpf == "88888888888" ||
+                cpf == "99999999999")
+                return false;
+            var add = 0;
+            for (var i = 0; i < 9; i++)
+                add += parseInt(cpf.charAt(i)) * (10 - i);
+            var rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(9)))
+                return false;
+            add = 0;
+            for (var i = 0; i < 10; i++)
+                add += parseInt(cpf.charAt(i)) * (11 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(10)))
+                return false;
+            return true;
+        }
+
+        function validarFormularioLogin() {
+            var cpf = document.getElementById("cpfLogin").value;
+            var senha = document.getElementById("senha").value;
+            if (cpf === '' || senha === '') {
+                alert("Por favor, preencha todos os campos de login.");
+                return false;
+            }
+            if (!validarCPF(cpf)) {
+                alert("Por favor, insira um CPF válido.");
+                return false;
+            }
+            // Redirecionar para a página principal após login bem-sucedido
+            window.location.href = 'index.html';
+            return true;
+        }
+
+        function validarFormularioRegistro() {
+            var email = document.getElementById("email").value;
+            var nome = document.getElementById("nome").value;
+            var celular = document.getElementById("celular").value;
+            var dataNascimento = document.getElementById("dataNascimento").value;
+            var cpf = document.getElementById("cpf").value;
+            var senha = document.getElementById("senhaRegistro").value;
+            var confirmarSenha = document.getElementById("confirmarSenha").value;
+
+            if (email === '' || nome === '' || celular === '' || dataNascimento === '' || cpf === '' || senha === '' || confirmarSenha === '') {
+                alert("Por favor, preencha todos os campos de registro.");
+                return false;
+            }
+            // Validação simples de e-mail
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Por favor, insira um e-mail válido.");
+                return false;
+            }
+            // Validação de celular (formato brasileiro)
+            var celularPattern = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+            if (!celularPattern.test(celular)) {
+                alert("Por favor, insira um número de celular válido.");
+                return false;
+            }
+            // Validação de CPF
+            if (!validarCPF(cpf)) {
+                alert("Por favor, insira um CPF válido.");
+                return false;
+            }
+            // Validação de senha
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem.");
+                return false;
+            }
+
+            // Redirecionar para a página principal após registro bem-sucedido
+            alert('Registro realizado com sucesso!');
+            window.location.href = 'index.html';
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.form-registro').addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio do formulário
+                if (validarFormularioRegistro()) {
+                    // Lidar com os dados do formulário
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <header>
+        <div class="container">
+            <div class="logo"><img src="img/logo.png" alt="Logo"></div>
+            <div class="menu">
+                <nav>
+                    <a href="index.html">Home</a>
+                </nav>
+            </div>
+            <div class="social">
+                <button><i class="fa-brands fa-instagram"></i></button>
+                <button><i class="fa-brands fa-facebook-f"></i></button>
+                <button><i class="fa-brands fa-youtube"></i></button>
+                <label class="switch">
+                    <input type="checkbox" checked id="dark-mode-toggle">
+                    <span class="slider"></span>
+                  </label>
+            </div>
+        </div>
+    </header>
+    <label class="switch">
+        <input type="checkbox" checked id="dark-mode-toggle">
+      </label>
+      
+      <script>
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+      
+        toggleButton.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+        });
+      </script>
+      
+
+      <section class="form-section">
+        <div class="container form-container">
+            <div class="form-box">
+                <h2>Login</h2>
+                <form class="form-login" onsubmit="return validarFormularioLogin()">
+                    <div class="form-group">
+                        <label for="cpfLogin">CPF:</label>
+                        <input type="text" id="cpfLogin" oninput="formatCPF(this)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </form>
+            </div>
+            <div class="form-box">
+                <h2>Registrar</h2>
+                <form class="form-registro" onsubmit="return validarFormularioRegistro()">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="celular">Celular:</label>
+                        <input type="text" id="celular" oninput="formatCelular(this)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataNascimento">Data de Nascimento:</label>
+                        <input type="date" id="dataNascimento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" oninput="formatCPF(this)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senhaRegistro">Senha:</label>
+                        <input type="password" id="senhaRegistro" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmarSenha">Confirmar Senha:</label>
+                        <input type="password" id="confirmarSenha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Qual a Boa? Todos os direitos reservados.</p>
+            <p>Contato: telefone (21) 99999-9999   @qual a boa?</p>
+            
+        </div>
+    </footer>
+</body>
+</html>
